@@ -21,7 +21,7 @@ are prefixed by `+234` and you should not expect your users to type that. Instea
 
 Now that we've gotten this out of the way here's an example
 
-```
+```js
 const naijaNumber = require('naija-phone-number');
 
 // 11 digit numbers
