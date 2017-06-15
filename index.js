@@ -1,13 +1,11 @@
-'use strict';
-
-var naijaPhoneNumber = {};
+module.exports = { isValid };
 
 /**
  * Validate phone number
  * @param  {string}  n
  * @return {Boolean} 
  */
-naijaPhoneNumber.isValid = function isValid(n) {
+function isValid(n) {
 
   var firstChar;
   var number;
@@ -34,5 +32,3 @@ naijaPhoneNumber.isValid = function isValid(n) {
   return pattern.test(number);
 
 };
-
-module.exports = naijaPhoneNumber;
