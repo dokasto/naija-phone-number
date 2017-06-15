@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/Udokah/naija-phone-number.svg?branch=master)](https://travis-ci.org/Udokah/naija-phone-number)
-
-[![Coverage Status](https://coveralls.io/repos/github/Udokah/naija-phone-number/badge.svg?branch=master)](https://coveralls.io/github/Udokah/naija-phone-number?branch=master)
+[![Build Status](https://travis-ci.org/Udokah/naija-phone-number.svg?branch=master)](https://travis-ci.org/Udokah/naija-phone-number) [![Coverage Status](https://coveralls.io/repos/github/Udokah/naija-phone-number/badge.svg?branch=master)](https://coveralls.io/github/Udokah/naija-phone-number?branch=master)
 
 ## Naija Phone Number
 A minimal library to validate a Nigerian phone number.
