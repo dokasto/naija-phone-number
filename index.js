@@ -9,7 +9,7 @@ function isValid(n) {
 
   var firstChar;
   var number;
-  var pattern = /^([0]{1})([7-9]{1})([0|1]{1})([1-9]{1})([\d]{7,8})$/g;
+  var pattern = /^([0]{1})([7-9]{1})([0|1]{1})([\d]{1})([\d]{7,8})$/g;
 
   if (!n || n.length < 5) return false;
 
