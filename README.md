@@ -1,7 +1,7 @@
-# Naija Phone Number
+## Naija Phone Number
 A minimal library to validate a Nigerian phone number.
 
-##Installation
+### Installation
 ```
 $ npm install naija-phone-number --save
 ```
