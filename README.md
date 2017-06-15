@@ -8,7 +8,7 @@ $ npm install naija-phone-number --save
 
 ### Usage
 
-This library already assumes that you know that Nigerian numbers
+This library assumes that you already know that Nigerian numbers
 are prefixed by `+234` and you should not expect your users to type that. Instead your UI should look something like this.
 
 ``` 
@@ -17,7 +17,7 @@ are prefixed by `+234` and you should not expect your users to type that. Instea
      |**********************|
 ```
 
-Now that we've gotten that out of the way here an example
+Now that we've gotten this out of the way here's an example
 
 ```
 const naijaNumber = require('naija-phone-number');
