@@ -1,7 +1,7 @@
 {
   "name": "naija-phone-number",
   "version": "1.0.0",
-  "description": "A minimal module to validate Nigerian mobile phone numbers.",
+  "description": "A fast minimal library to validate a Nigerian phone number using Regular Expressions",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -17,6 +17,7 @@
     "url": "git+https://github.com/Udokah/naija-phone-number.git"
   },
   "keywords": [
+    "Regular Expressions",
     "Validate",
     "naija",
     "number",
