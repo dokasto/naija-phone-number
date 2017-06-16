@@ -22,9 +22,9 @@ are prefixed by `+234` and you should not expect your users to type that. Instea
 Now that we've gotten this out of the way here's an example
 
 ```js
-var naijaNumber = require('naija-phone-number');
+const naijaNumber = require('naija-phone-number');
 
-var phoneInput = document.querySelector('#phone-input').value;
+let phoneInput = document.querySelector('#phone-input').value;
 
 naijaNumber.isValid(phoneInput); // true or false
 ```
