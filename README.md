@@ -33,7 +33,10 @@ naijaNumber.isValid('070328582392'); // true
 // Pass argument as Number
 naijaNumber.isValid(081928582392); // true
 
-naijaNumber.isValid(081028582392); // true
-
+// Unknown provider
 naijaNumber.isValid(050728582392); // false
 ```
+
+### License
+
+MIT
