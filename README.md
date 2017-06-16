@@ -1,7 +1,7 @@
 [![npm version](https://badge.fury.io/js/naija-phone-number.svg)](https://badge.fury.io/js/naija-phone-number) [![Build Status](https://travis-ci.org/Udokah/naija-phone-number.svg?branch=master)](https://travis-ci.org/Udokah/naija-phone-number)
 
 ## Naija Phone Number
-A fast minimal library to validate a Nigerian phone number using Regular Expressions.
+A fast minimal module to validate a Nigerian phone number using Regular Expressions.
 
 ### Installation
 ```
@@ -10,7 +10,7 @@ $ npm install naija-phone-number --save
 
 ### Usage
 
-This library assumes that you already know that Nigerian numbers
+This module assumes that you already know that Nigerian numbers
 are prefixed by `+234` and you should not expect your users to type that. Instead your UI should look something like this.
 
 ``` 

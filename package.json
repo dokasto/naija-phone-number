@@ -1,7 +1,7 @@
 {
   "name": "naija-phone-number",
   "version": "1.0.0",
-  "description": "A fast minimal library to validate a Nigerian phone number using Regular Expressions",
+  "description": "A fast minimal module to validate a Nigerian phone number using Regular Expressions",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
