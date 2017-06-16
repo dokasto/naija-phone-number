@@ -22,15 +22,21 @@ are prefixed by `+234` and you should not expect your users to type that. Instea
 Now that we've gotten this out of the way here's an example
 
 ```js
-const naijaNumber = require('naija-phone-number');
+var naijaNumber = require('naija-phone-number');
 
-// 11 digit numbers
-naijaNumber.isValid('09052858232'); // true
+var phoneInput = document.querySelector('#phone-input').value;
+
+naijaNumber.isValid(phoneInput); // true or false
+```
+
+### Also
+
+```js
 
 // 12 digit numbers
 naijaNumber.isValid('070328582392'); // true
 
-// Pass argument as Number
+// pass argument as Number
 naijaNumber.isValid(081928582392); // true
 
 // Unknown provider
