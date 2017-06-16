@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Udokah/naija-phone-number.svg?branch=master)](https://travis-ci.org/Udokah/naija-phone-number)
+[![npm version](https://badge.fury.io/js/naija-phone-number.svg)](https://badge.fury.io/js/naija-phone-number) [![Build Status](https://travis-ci.org/Udokah/naija-phone-number.svg?branch=master)](https://travis-ci.org/Udokah/naija-phone-number)
 
 ## Naija Phone Number
 A minimal library to validate a Nigerian phone number.
