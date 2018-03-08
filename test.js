@@ -1,6 +1,7 @@
 'use strict';
 
 var assert = require('assert');
+var Q = require('q');
 
 var naijaNumber = require('./index.js');
 
@@ -22,115 +23,156 @@ describe('Test Numbers', function() {
 
   describe('Network providers', function() {
     it('should return false for unknown network providers', function() {
-      assert.equal(false, naijaNumber.isValid('05018154929'));
+      var actual = naijaNumber.isValid('05018154929');
+      assert.equal(false, actual);
     });
 
     it('MTN numbers', function() {
-      var result = prefixes.MTN.map(function(prefix) {
+      var results = prefixes.MTN.map(function(prefix) {
         return naijaNumber.isValid(prefix + suffix);
       });
-      assert.equal(-1, result.indexOf(false));
+
+      Q.all(results).then(function(actuals) {
+        assert.equal(-1, actuals.indexOf(false));
+      });
     });
 
     it('GLO numbers', function() {
-      var result = prefixes.GLO.map(function(prefix) {
+      var results = prefixes.GLO.map(function(prefix) {
         return naijaNumber.isValid(prefix + suffix);
       });
-      assert.equal(-1, result.indexOf(false));
+
+      Q.all(results).then(function(actuals) {
+        assert.equal(-1, actuals.indexOf(false));
+      });
     });
 
     it('Airtel numbers', function() {
-      var result = prefixes.Airtel.map(function(prefix) {
+      var results = prefixes.Airtel.map(function(prefix) {
         return naijaNumber.isValid(prefix + suffix);
       });
-      assert.equal(-1, result.indexOf(false));
+
+      Q.all(results).then(function(actuals) {
+        assert.equal(-1, actuals.indexOf(false));
+      });
     });
 
     it('Etisalat numbers', function() {
-      var result = prefixes.Etisalat.map(function(prefix) {
+      var results = prefixes.Etisalat.map(function(prefix) {
         return naijaNumber.isValid(prefix + suffix);
       });
-      assert.equal(-1, result.indexOf(false));
+
+      Q.all(results).then(function(actuals) {
+        assert.equal(-1, actuals.indexOf(false));
+      });
     });
 
     it('Visafone numbers', function() {
-      var result = prefixes.Visafone.map(function(prefix) {
+      var results = prefixes.Visafone.map(function(prefix) {
         return naijaNumber.isValid(prefix + suffix);
       });
-      assert.equal(-1, result.indexOf(false));
+
+      Q.all(results).then(function(actuals) {
+        assert.equal(-1, actuals.indexOf(false));
+      });
     });
 
     it('Starcomms numbers', function() {
-      var result = prefixes.Starcomms.map(function(prefix) {
+      var results = prefixes.Starcomms.map(function(prefix) {
         return naijaNumber.isValid(prefix + suffix);
       });
-      assert.equal(-1, result.indexOf(false));
+
+      Q.all(results).then(function(actuals) {
+        assert.equal(-1, actuals.indexOf(false));
+      });
     });
 
     it('Multilinks numbers', function() {
-      var result = prefixes.Multilinks.map(function(prefix) {
+      var results = prefixes.Multilinks.map(function(prefix) {
         return naijaNumber.isValid(prefix + suffix);
       });
-      assert.equal(-1, result.indexOf(false));
+
+      Q.all(results).then(function(actuals) {
+        assert.equal(-1, actuals.indexOf(false));
+      });
     });
 
     it('Zoom numbers', function() {
-      var result = prefixes.Zoom.map(function(prefix) {
+      var results = prefixes.Zoom.map(function(prefix) {
         return naijaNumber.isValid(prefix + suffix);
       });
-      assert.equal(-1, result.indexOf(false));
+
+      Q.all(results).then(function(actuals) {
+        assert.equal(-1, actuals.indexOf(false));
+      });
     });
 
     it('MTEL numbers', function() {
-      var result = prefixes.MTEL.map(function(prefix) {
+      var results = prefixes.MTEL.map(function(prefix) {
         return naijaNumber.isValid(prefix + suffix);
       });
-      assert.equal(-1, result.indexOf(false));
-    });
 
+      Q.all(results).then(function(actuals) {
+        assert.equal(-1, actuals.indexOf(false));
+      });
+    });
   });
 
   describe('Length of digits.', function() {
     it('should return true for eleven (11) digit numbers.', function() {
-      assert.equal(true, naijaNumber.isValid('081028582392'));
+      naijaNumber.isValid('081028582392', function(error, actual) {
+        assert.equal(true, actual);
+      });
     });
 
     it('should return true for twelve (12) digit numbers.', function() {
-      assert.equal(true, naijaNumber.isValid('081981449797'));
+      naijaNumber.isValid('081981449797', function(error, actual) {
+        assert.equal(true, actual);
+      });
     });
 
     it('should return false for < 11 digit numbers.', function() {
-      assert.equal(false, naijaNumber.isValid('080481447'));
+     naijaNumber.isValid('080481447', function(error, actual) {
+        assert.equal(false, actual);
+      });
     });
 
     it('should return false for > 12 digit numbers.', function() {
-      assert.equal(false, naijaNumber.isValid('0803815492999'));
+      naijaNumber.isValid('0803815492999', function(error, actual) {
+        assert.equal(false, actual);
+      });
     });
   });
 
   describe('Argument data types', function() {
     it('should return false for objects', function() {
-      assert.equal(false, naijaNumber.isValid({}));
+      var actual = naijaNumber.isValid({});
+      assert.equal(false, actual);
     });
 
     it('should return false for arrays', function() {
-      assert.equal(false, naijaNumber.isValid([1, 2, 3]));
+      var actual = naijaNumber.isValid([1, 2, 3]);
+      assert.equal(false, actual);
     });
 
     it('should return false for null', function() {
-      assert.equal(false, naijaNumber.isValid(null));
+      var actual = naijaNumber.isValid(null);
+      assert.equal(false, actual);
     });
 
     it('should return false for empty string', function() {
-      assert.equal(false, naijaNumber.isValid(''));
+      var actual = naijaNumber.isValid('');
+      assert.equal(false, actual);
     });
 
     it('should return false for empty args', function() {
-      assert.equal(false, naijaNumber.isValid());
+      var actual = naijaNumber.isValid();
+      assert.equal(false, actual);
     });
 
     it('should return false for non integers or alpha-numerics', function() {
-      assert.equal(false, naijaNumber.isValid('080d-815f929'));
+      var actual =  naijaNumber.isValid('080d-815f929');
+      assert.equal(false, actual);
     });
   });
 

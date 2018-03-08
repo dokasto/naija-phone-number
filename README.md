@@ -13,7 +13,7 @@ $ npm install naija-phone-number --save
 This module assumes that you already know that Nigerian numbers
 are prefixed by `+234` and you should not expect your users to type that. Instead your UI should look something like this.
 
-``` 
+```
      |**********************|
 +234 |  phone number here   |
      |**********************|
@@ -35,12 +35,21 @@ naijaNumber.isValid(phoneInput); // true or false
 
 // 12 digit numbers
 naijaNumber.isValid('070328582392'); // true
+naijaNumber.isValid('070328582392', function(error, result) {
+  console.log(result); // true
+});
 
 // pass argument as Number
 naijaNumber.isValid(081928582392); // true
+naijaNumber.isValid(081928582392, function(error, result) {
+  console.log(result); // true
+});
 
 // Unknown provider
 naijaNumber.isValid(050728582392); // false
+naijaNumber.isValid(050728582392, function(error, result) {
+  console.log(result); // false
+});
 ```
 
 ### License
