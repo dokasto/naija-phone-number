@@ -23,9 +23,8 @@ describe('Test Numbers', function() {
 
   describe('Network providers', function() {
     it('should return false for unknown network providers', function() {
-      naijaNumber.isValid('05018154929').then(function(actual) {
-        assert.equal(false, actual);
-      });
+      var actual = naijaNumber.isValid('05018154929');
+      assert.equal(false, actual);
     });
 
     it('MTN numbers', function() {
@@ -147,39 +146,33 @@ describe('Test Numbers', function() {
 
   describe('Argument data types', function() {
     it('should return false for objects', function() {
-      naijaNumber.isValid({}).catch(function(actual) {
-        assert.equal(false, actual);
-      });
+      var actual = naijaNumber.isValid({});
+      assert.equal(false, actual);
     });
 
     it('should return false for arrays', function() {
-      naijaNumber.isValid([1, 2, 3]).catch(function(actual) {
-        assert.equal(false, actual);
-      });
+      var actual = naijaNumber.isValid([1, 2, 3]);
+      assert.equal(false, actual);
     });
 
     it('should return false for null', function() {
-      naijaNumber.isValid(null).catch(function(actual) {
-        assert.equal(false, actual);
-      });
+      var actual = naijaNumber.isValid(null);
+      assert.equal(false, actual);
     });
 
     it('should return false for empty string', function() {
-      naijaNumber.isValid('').catch(function(actual) {
-        assert.equal(false, actual);
-      });
+      var actual = naijaNumber.isValid('');
+      assert.equal(false, actual);
     });
 
     it('should return false for empty args', function() {
-      naijaNumber.isValid().catch(function(actual) {
-        assert.equal(false, actual);
-      });
+      var actual = naijaNumber.isValid();
+      assert.equal(false, actual);
     });
 
     it('should return false for non integers or alpha-numerics', function() {
-      naijaNumber.isValid('080d-815f929').catch(function(actual) {
-        assert.equal(false, actual);
-      });
+      var actual =  naijaNumber.isValid('080d-815f929');
+      assert.equal(false, actual);
     });
   });
 

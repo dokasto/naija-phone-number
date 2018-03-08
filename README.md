@@ -26,10 +26,7 @@ const naijaNumber = require('naija-phone-number');
 
 let phoneInput = document.querySelector('#phone-input').value;
 
-naijaNumber
-  .isValid(phoneInput)
-  .then(console.log) // true
-  .catch(console.error); // or false
+naijaNumber.isValid(phoneInput); // true or false
 ```
 
 ### Also
@@ -37,13 +34,22 @@ naijaNumber
 ```js
 
 // 12 digit numbers
-naijaNumber.isValid('070328582392', function(error, result) {}); // true
+naijaNumber.isValid('070328582392'); // true
+naijaNumber.isValid('070328582392', function(error, result) {
+  console.log(result); // true
+});
 
 // pass argument as Number
-naijaNumber.isValid(081928582392, function(error, result) {}); // true
+naijaNumber.isValid(081928582392); // true
+naijaNumber.isValid(081928582392, function(error, result) {
+  console.log(result); // true
+});
 
 // Unknown provider
-naijaNumber.isValid(050728582392, function(error, result) {}); // false
+naijaNumber.isValid(050728582392); // false
+naijaNumber.isValid(050728582392, function(error, result) {
+  console.log(result); // false
+});
 ```
 
 ### License
